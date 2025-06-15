@@ -7,71 +7,71 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
-    --foreground: 24 24 27;
+    --background: 21 23 36;
+    --foreground: 228 229 242;
 
-    --card: 255 255 255;
-    --card-foreground: 24 24 27;
+    --card: 28 30 45;
+    --card-foreground: 228 229 242;
 
-    --popover: 255 255 255;
-    --popover-foreground: 24 24 27;
+    --popover: 32 34 52;
+    --popover-foreground: 228 229 242;
 
-    --primary: 107 70 193;
-    --primary-foreground: 255 255 255;
+    --primary: 139 92 246;
+    --primary-foreground: 251 249 255;
 
-    --secondary: 139 92 246;
-    --secondary-foreground: 255 255 255;
+    --secondary: 80 72 133;
+    --secondary-foreground: 228 229 242;
 
-    --muted: 241 245 249;
-    --muted-foreground: 55 65 81;
+    --muted: 44 47 80;
+    --muted-foreground: 128 138 162;
 
-    --accent: 139 92 246;
-    --accent-foreground: 255 255 255;
+    --accent: 168 85 247;
+    --accent-foreground: 251 249 255;
 
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
 
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 107 70 193;
+    --border: 35 38 62;
+    --input: 35 38 62;
+    --ring: 139 92 246;
 
     --radius: 0.5rem;
-
-    --consciousness-primary: 107 70 193;
-    --consciousness-secondary: 139 92 246;
-    --consciousness-accent: 168 85 247;
+    
+    --consciousness-primary: 168 85 247;         /* soft purple */
+    --consciousness-secondary: 139 92 246;      /* slightly deeper purple */
+    --consciousness-accent: 124 58 237;         /* accent purple */
     --neural-gradient-start: 67 56 202;
     --neural-gradient-end: 139 92 246;
   }
 
   .dark {
     --background: 21 23 36;
-    --foreground: 245 245 248;
+    --foreground: 228 229 242;
 
-    --card: 34 37 53;
-    --card-foreground: 245 245 248;
+    --card: 28 30 45;
+    --card-foreground: 228 229 242;
 
-    --popover: 34 37 53;
-    --popover-foreground: 245 245 248;
+    --popover: 32 34 52;
+    --popover-foreground: 228 229 242;
 
     --primary: 168 85 247;
-    --primary-foreground: 21 23 36;
+    --primary-foreground: 251 249 255;
 
-    --secondary: 139 92 246;
-    --secondary-foreground: 245 245 248;
+    --secondary: 80 72 133;
+    --secondary-foreground: 228 229 242;
 
-    --muted: 47 54 74;
-    --muted-foreground: 187 196 227;
+    --muted: 44 47 80;
+    --muted-foreground: 128 138 162;
 
-    --accent: 124 58 237;
-    --accent-foreground: 245 245 248;
+    --accent: 139 92 246;
+    --accent-foreground: 251 249 255;
 
     --destructive: 239 68 68;
-    --destructive-foreground: 245 245 248;
+    --destructive-foreground: 255 255 255;
 
-    --border: 47 54 74;
-    --input: 47 54 74;
-    --ring: 168 85 247;
+    --border: 35 38 62;
+    --input: 35 38 62;
+    --ring: 139 92 246;
   }
 }
 
@@ -91,13 +91,14 @@
   }
   
   .consciousness-glow {
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.20);
   }
   
   .data-grid {
     background-image: 
-      linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+      linear-gradient(rgba(139, 92, 246, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.07) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 }
+
