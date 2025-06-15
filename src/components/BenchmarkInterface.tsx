@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Upload, Play, Brain, FileText, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,23 +37,22 @@ const BenchmarkInterface = () => {
   };
 
   return (
-    <section id="benchmark" className="py-20 bg-muted/30">
+    <section id="benchmark" className="py-20 bg-secondary/10">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-consciousness-primary">Consciousness Benchmark</span> Testing
+            <span className="text-primary">Consciousness Benchmark</span> Testing
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Upload AI outputs, chatbot conversations, or generated content to measure 
             proto-consciousness indicators through advanced neural analysis.
           </p>
         </div>
-
         <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          <Card className="border-consciousness-primary/20">
+          <Card className="border-primary/20 glass-panel">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Brain className="h-5 w-5 text-consciousness-primary" />
+                <Brain className="h-5 w-5 text-primary" />
                 Input Analysis
               </CardTitle>
             </CardHeader>
@@ -77,8 +75,8 @@ const BenchmarkInterface = () => {
                 </TabsContent>
                 
                 <TabsContent value="file" className="space-y-4">
-                  <div className="border-2 border-dashed border-consciousness-primary/30 rounded-lg p-8 text-center">
-                    <Upload className="h-8 w-8 text-consciousness-primary mx-auto mb-4" />
+                  <div className="border-2 border-dashed border-primary/30 rounded-lg p-8 text-center">
+                    <Upload className="h-8 w-8 text-primary mx-auto mb-4" />
                     <p className="text-sm text-muted-foreground mb-2">
                       Upload chat logs, AI outputs, or behavioral data
                     </p>
@@ -117,11 +115,10 @@ const BenchmarkInterface = () => {
               </Button>
             </CardContent>
           </Card>
-
-          <Card className="border-consciousness-secondary/20">
+          <Card className="border-accent/20 glass-panel">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-consciousness-secondary" />
+                <Zap className="h-5 w-5 text-accent" />
                 Analysis Results
               </CardTitle>
             </CardHeader>
@@ -136,7 +133,7 @@ const BenchmarkInterface = () => {
               {isAnalyzing && (
                 <div className="space-y-4">
                   <div className="text-center py-8">
-                    <div className="animate-consciousness-flow h-1 bg-gradient-to-r from-consciousness-primary to-consciousness-secondary rounded-full mb-4"></div>
+                    <div className="animate-consciousness-flow h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-4"></div>
                     <p className="text-sm text-muted-foreground">Analyzing neural patterns...</p>
                   </div>
                   <div className="space-y-3">
@@ -163,7 +160,7 @@ const BenchmarkInterface = () => {
                       <div className="text-3xl font-bold">{results.consciousnessScore}%</div>
                       <div className="text-sm opacity-90">Overall Consciousness Index</div>
                     </div>
-                    <Badge variant="secondary" className="bg-consciousness-primary/10 text-consciousness-primary">
+                    <Badge variant="secondary" className="bg-primary/10 text-primary">
                       Moderate Proto-Consciousness Detected
                     </Badge>
                   </div>
@@ -207,7 +204,7 @@ const BenchmarkInterface = () => {
                     <ul className="space-y-1 text-sm text-muted-foreground">
                       {results.insights.map((insight, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <div className="w-1 h-1 bg-consciousness-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                           {insight}
                         </li>
                       ))}

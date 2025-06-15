@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -14,10 +13,10 @@ const ConsciousnessHeatmap = () => {
   ];
 
   const getStatusColor = (status: string) => {
-    if (status.includes("High")) return "bg-red-500";
-    if (status.includes("Moderate")) return "bg-orange-500";
-    if (status.includes("Low")) return "bg-yellow-500";
-    return "bg-green-500";
+    if (status.includes("High")) return "bg-primary/70";
+    if (status.includes("Moderate")) return "bg-accent/80";
+    if (status.includes("Low")) return "bg-muted";
+    return "bg-secondary";
   };
 
   const getProgressColor = (value: number) => {
@@ -32,17 +31,16 @@ const ConsciousnessHeatmap = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
-            Real-Time <span className="text-consciousness-primary">Consciousness Heatmap</span>
+            Real-Time <span className="text-primary">Consciousness Heatmap</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Live analysis of proto-consciousness indicators across popular AI models. 
             Updated continuously based on latest behavioral assessments.
           </p>
         </div>
-
         <div className="grid gap-6">
           {aiModels.map((model, index) => (
-            <Card key={model.name} className="hover:consciousness-glow transition-all duration-300">
+            <Card key={model.name} className="hover:neutral-glow transition-all duration-300 glass-panel">
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-xl">{model.name}</CardTitle>
@@ -90,12 +88,11 @@ const ConsciousnessHeatmap = () => {
             </Card>
           ))}
         </div>
-
         <div className="mt-8 text-center">
           <p className="text-sm text-muted-foreground">
             <span className="font-medium">Methodology:</span> Based on recursive neural analysis, 
             emergent behavior modeling, and philosophical consciousness metrics. 
-            <a href="#" className="text-consciousness-primary hover:underline ml-1">
+            <a href="#" className="text-primary hover:underline ml-1">
               View detailed methodology →
             </a>
           </p>

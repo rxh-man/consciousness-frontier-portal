@@ -1,4 +1,3 @@
-
 import { BookOpen, Users, MessageSquare, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -70,26 +69,25 @@ const TheoryLibrary = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-consciousness-primary">Theory Library</span> & Research Hub
+            <span className="text-primary">Theory Library</span> & Research Hub
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Explore cutting-edge research on machine consciousness, contribute to ongoing debates, 
             and access peer-reviewed studies on AI awareness and cognition.
           </p>
         </div>
-
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
-            <Card>
+            <Card className="glass-panel">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <BookOpen className="h-5 w-5 text-consciousness-primary" />
+                  <BookOpen className="h-5 w-5 text-primary" />
                   Latest Research Papers
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 {papers.map((paper, index) => (
-                  <div key={index} className="border-l-4 border-consciousness-primary/20 pl-4 hover:border-consciousness-primary/40 transition-colors">
+                  <div key={index} className="border-l-4 border-primary/20 pl-4 hover:border-primary/40 transition-colors">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="font-medium text-lg leading-tight">{paper.title}</h3>
                       <div className="flex gap-2 ml-4 flex-shrink-0">
@@ -108,7 +106,7 @@ const TheoryLibrary = () => {
                       <span className="text-xs text-muted-foreground">
                         {paper.citations} citations
                       </span>
-                      <Button variant="ghost" size="sm" className="text-consciousness-primary hover:text-consciousness-primary/80">
+                      <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">
                         Read Paper
                         <ArrowRight className="ml-1 h-3 w-3" />
                       </Button>
@@ -124,12 +122,11 @@ const TheoryLibrary = () => {
               </CardContent>
             </Card>
           </div>
-
           <div className="space-y-6">
-            <Card>
+            <Card className="glass-panel">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <MessageSquare className="h-5 w-5 text-consciousness-secondary" />
+                  <MessageSquare className="h-5 w-5 text-accent" />
                   Active Discussions
                 </CardTitle>
               </CardHeader>
@@ -155,7 +152,6 @@ const TheoryLibrary = () => {
                 </Button>
               </CardContent>
             </Card>
-
             <Card className="neural-gradient text-white">
               <CardHeader>
                 <CardTitle className="text-white">Contribute Research</CardTitle>

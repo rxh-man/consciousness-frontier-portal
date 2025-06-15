@@ -3,78 +3,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
-
+/* Core neutral color palette: black, white, gray, brown */
 @layer base {
   :root {
-    --background: 20 22 34;
-    --foreground: 235 236 255;
+    --background: 18 16 14;
+    --foreground: 255 255 255;
 
-    --card: 28 30 45;
-    --card-foreground: 228 229 242;
+    --card: 33 32 30;
+    --card-foreground: 235 235 235;
 
-    --popover: 28 30 45;
-    --popover-foreground: 235 236 255;
+    --popover: 24 23 22;
+    --popover-foreground: 255 255 255;
 
-    --primary: 159 98 249;
-    --primary-foreground: 251 249 255;
+    --primary: 50 38 31;         /* brown */
+    --primary-foreground: 248 244 240;
 
-    --secondary: 74 63 114;
-    --secondary-foreground: 235 236 255;
+    --secondary: 55 51 48;        /* dark brown-olive */
+    --secondary-foreground: 210 210 210;
 
-    --muted: 47 48 66;
-    --muted-foreground: 150 160 190;
+    --muted: 72 71 70;
+    --muted-foreground: 180 180 180;
 
-    --accent: 168 85 247;
-    --accent-foreground: 251 249 255;
+    --accent: 120 109 98;        /* brown-tan */
+    --accent-foreground: 255 255 255;
 
-    --destructive: 245 80 102;
+    --destructive: 80 62 50;    /* deepest brown for error/danger */
     --destructive-foreground: 255 255 255;
 
-    --border: 91 77 134;
-    --input: 41 39 83;
-    --ring: 168 85 247;
+    --border: 42 41 40;
+    --input: 45 44 43;
+    --ring: 80 71 62;
 
     --radius: 0.75rem;
 
-    /* Custom purple brand gradient for glass panels, neural highlights */
-    --consciousness-primary: 168 85 247;
-    --consciousness-secondary: 139 92 246;
-    --consciousness-accent: 124 58 237;
-    --glass-bg: 32 34 52 / 60%;
-    --glass-border: 168 85 247 / 16%;
-    --glass-outline: linear-gradient(110deg, rgba(168,85,247,0.12) 0%, rgba(139,92,246,0.07) 100%);
-    --neural-gradient-start: 67 56 202;
-    --neural-gradient-end: 139 92 246;
+    /* Glass neutrals, neural panel highlight */
+    --glass-bg: 32 31 30 / 75%;
+    --glass-border: 98 87 76 / 20%;
+    --glass-outline: linear-gradient(110deg, rgba(98,87,76,0.12) 0%, rgba(60,50,45,0.07) 100%);
+    --neural-gradient-start: 65 61 60;
+    --neural-gradient-end: 120 109 98;
   }
   .dark {
-    --background: 20 22 34;
-    --foreground: 235 236 255;
+    --background: 14 13 12;
+    --foreground: 255 255 255;
 
-    --card: 28 30 45;
-    --card-foreground: 228 229 242;
+    --card: 35 34 33;
+    --card-foreground: 235 235 235;
 
-    --popover: 28 30 45;
-    --popover-foreground: 235 236 255;
+    --popover: 24 23 22;
+    --popover-foreground: 255 255 255;
 
-    --primary: 168 85 247;
-    --primary-foreground: 251 249 255;
+    --primary: 50 38 31;
+    --primary-foreground: 255 255 255;
 
-    --secondary: 74 63 114;
-    --secondary-foreground: 235 236 255;
+    --secondary: 55 51 48;
+    --secondary-foreground: 230 230 230;
 
-    --muted: 47 48 66;
-    --muted-foreground: 150 160 190;
+    --muted: 66 64 62;
+    --muted-foreground: 180 180 180;
 
-    --accent: 139 92 246;
-    --accent-foreground: 251 249 255;
+    --accent: 120 109 98;
+    --accent-foreground: 255 255 255;
 
-    --destructive: 245 80 102;
+    --destructive: 80 62 50;
     --destructive-foreground: 255 255 255;
 
-    --border: 91 77 134;
-    --input: 41 39 83;
-    --ring: 168 85 247;
+    --border: 32 32 31;
+    --input: 32 31 30;
+    --ring: 80 71 62;
   }
 }
 
@@ -89,13 +85,13 @@
   }
 }
 
-/* Glassmorphism utility */
+/* Neutral glassmorphism utility */
 @layer utilities {
   .glass-panel {
     background: rgba(var(--glass-bg));
     @apply backdrop-blur-lg border border-solid rounded-2xl shadow-xl;
     border-color: rgba(var(--glass-border));
-    box-shadow: 0 4px 28px 0 rgba(168, 85, 247, 0.07), 0 1.5px 7px 0 rgba(32,33,52,0.12);
+    box-shadow: 0 4px 28px 0 rgba(98, 87, 76, 0.07), 0 1.5px 7px 0 rgba(32,31,30,0.12);
     border-width: 1.5px;
     border-radius: 1.2rem;
     position: relative;
@@ -109,23 +105,21 @@
     border-radius: inherit;
     z-index: 1;
     background: var(--glass-outline);
-    opacity: 0.85;
-    /* Subtle gradient ring */
+    opacity: 0.70;
   }
 
-  /* Animations as before... */
   .neural-gradient {
-    background: linear-gradient(135deg, rgb(67 56 202) 0%, rgb(139 92 246) 100%);
+    background: linear-gradient(135deg, rgb(65 61 60) 0%, rgb(120 109 98) 100%);
   }
 
-  .consciousness-glow {
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
+  .neutral-glow {
+    box-shadow: 0 0 40px rgba(120, 109, 98, 0.12);
   }
 
   .data-grid {
     background-image:
-      linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(120, 109, 98, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(120, 109, 98, 0.04) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 }
