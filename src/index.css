@@ -7,71 +7,74 @@
 
 @layer base {
   :root {
-    --background: 21 23 36;
-    --foreground: 228 229 242;
+    --background: 20 22 34;
+    --foreground: 235 236 255;
 
     --card: 28 30 45;
     --card-foreground: 228 229 242;
 
-    --popover: 32 34 52;
-    --popover-foreground: 228 229 242;
+    --popover: 28 30 45;
+    --popover-foreground: 235 236 255;
 
-    --primary: 139 92 246;
+    --primary: 159 98 249;
     --primary-foreground: 251 249 255;
 
-    --secondary: 80 72 133;
-    --secondary-foreground: 228 229 242;
+    --secondary: 74 63 114;
+    --secondary-foreground: 235 236 255;
 
-    --muted: 44 47 80;
-    --muted-foreground: 128 138 162;
+    --muted: 47 48 66;
+    --muted-foreground: 150 160 190;
 
     --accent: 168 85 247;
     --accent-foreground: 251 249 255;
 
-    --destructive: 239 68 68;
+    --destructive: 245 80 102;
     --destructive-foreground: 255 255 255;
 
-    --border: 35 38 62;
-    --input: 35 38 62;
-    --ring: 139 92 246;
+    --border: 91 77 134;
+    --input: 41 39 83;
+    --ring: 168 85 247;
 
-    --radius: 0.5rem;
-    
-    --consciousness-primary: 168 85 247;         /* soft purple */
-    --consciousness-secondary: 139 92 246;      /* slightly deeper purple */
-    --consciousness-accent: 124 58 237;         /* accent purple */
+    --radius: 0.75rem;
+
+    /* Custom purple brand gradient for glass panels, neural highlights */
+    --consciousness-primary: 168 85 247;
+    --consciousness-secondary: 139 92 246;
+    --consciousness-accent: 124 58 237;
+    --glass-bg: 32 34 52 / 60%;
+    --glass-border: 168 85 247 / 16%;
+    --glass-outline: linear-gradient(110deg, rgba(168,85,247,0.12) 0%, rgba(139,92,246,0.07) 100%);
     --neural-gradient-start: 67 56 202;
     --neural-gradient-end: 139 92 246;
   }
-
   .dark {
-    --background: 21 23 36;
-    --foreground: 228 229 242;
+    --background: 20 22 34;
+    --foreground: 235 236 255;
 
     --card: 28 30 45;
     --card-foreground: 228 229 242;
 
-    --popover: 32 34 52;
-    --popover-foreground: 228 229 242;
+    --popover: 28 30 45;
+    --popover-foreground: 235 236 255;
 
     --primary: 168 85 247;
     --primary-foreground: 251 249 255;
 
-    --secondary: 80 72 133;
-    --secondary-foreground: 228 229 242;
+    --secondary: 74 63 114;
+    --secondary-foreground: 235 236 255;
 
-    --muted: 44 47 80;
-    --muted-foreground: 128 138 162;
+    --muted: 47 48 66;
+    --muted-foreground: 150 160 190;
 
     --accent: 139 92 246;
     --accent-foreground: 251 249 255;
 
-    --destructive: 239 68 68;
+    --destructive: 245 80 102;
     --destructive-foreground: 255 255 255;
 
-    --border: 35 38 62;
-    --input: 35 38 62;
-    --ring: 139 92 246;
+    --border: 91 77 134;
+    --input: 41 39 83;
+    --ring: 168 85 247;
   }
 }
 
@@ -81,24 +84,48 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   }
 }
 
+/* Glassmorphism utility */
 @layer utilities {
+  .glass-panel {
+    background: rgba(var(--glass-bg));
+    @apply backdrop-blur-lg border border-solid rounded-2xl shadow-xl;
+    border-color: rgba(var(--glass-border));
+    box-shadow: 0 4px 28px 0 rgba(168, 85, 247, 0.07), 0 1.5px 7px 0 rgba(32,33,52,0.12);
+    border-width: 1.5px;
+    border-radius: 1.2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .glass-panel::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    z-index: 1;
+    background: var(--glass-outline);
+    opacity: 0.85;
+    /* Subtle gradient ring */
+  }
+
+  /* Animations as before... */
   .neural-gradient {
     background: linear-gradient(135deg, rgb(67 56 202) 0%, rgb(139 92 246) 100%);
   }
-  
+
   .consciousness-glow {
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.20);
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.15);
   }
-  
+
   .data-grid {
-    background-image: 
-      linear-gradient(rgba(139, 92, 246, 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(139, 92, 246, 0.07) 1px, transparent 1px);
+    background-image:
+      linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
     background-size: 20px 20px;
   }
 }
-
